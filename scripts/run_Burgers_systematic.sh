@@ -14,4 +14,7 @@ source ~/conda_init.sh
 
 conda activate emulators_tf115
 
-python appendix/continuous_time_identification\ \(Burgers\)/Burgers_systematic.py
+
+cd ~/projects/PINNs/appendix/continuous_time_identification\ \(Burgers\)/
+
+python Burgers_systematic.py
