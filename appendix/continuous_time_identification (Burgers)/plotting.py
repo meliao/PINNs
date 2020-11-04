@@ -57,7 +57,7 @@ def savefig(filename, crop = True):
 #        plt.savefig('{}.pgf'.format(filename))
         # plt.savefig('{}.pdf'.format(filename))
         # plt.savefig('{}.eps'.format(filename))
-        plt.savefig('{}.eps'.format(filename))
+        plt.savefig('{}.png'.format(filename))
 
 
 ## Simple plot

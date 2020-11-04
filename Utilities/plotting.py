@@ -20,8 +20,8 @@ def figsize(scale, nplots = 1):
     return fig_size
 
 pgf_with_latex = {                      # setup matplotlib to use latex for output
-    "pgf.texsystem": "pdflatex",        # change this if using xetex or lautex
-    "text.usetex": True,                # use LaTeX to write all text
+    # "pgf.texsystem": "pdflatex",        # change this if using xetex or lautex
+    # "text.usetex": True,                # use LaTeX to write all text
     "font.family": "serif",
     "font.serif": [],                   # blank entries should cause plots to inherit fonts from the document
     "font.sans-serif": [],
@@ -32,10 +32,10 @@ pgf_with_latex = {                      # setup matplotlib to use latex for outp
     "xtick.labelsize": 8,
     "ytick.labelsize": 8,
     "figure.figsize": figsize(1.0),     # default fig size of 0.9 textwidth
-    "pgf.preamble": [
-        r"\usepackage[utf8x]{inputenc}",    # use utf8 fonts becasue your computer can handle it :)
-        r"\usepackage[T1]{fontenc}",        # plots will be generated using this preamble
-        ]
+    # "pgf.preamble": [
+    #     r"\usepackage[utf8x]{inputenc}",    # use utf8 fonts becasue your computer can handle it :)
+    #     r"\usepackage[T1]{fontenc}",        # plots will be generated using this preamble
+    #     ]
     }
 mpl.rcParams.update(pgf_with_latex)
 
@@ -50,12 +50,15 @@ def newfig(width, nplots = 1):
 def savefig(filename, crop = True):
     if crop == True:
 #        plt.savefig('{}.pgf'.format(filename), bbox_inches='tight', pad_inches=0)
-        plt.savefig('{}.pdf'.format(filename), bbox_inches='tight', pad_inches=0)
-        plt.savefig('{}.eps'.format(filename), bbox_inches='tight', pad_inches=0)
+        # plt.savefig('{}.pdf'.format(filename), bbox_inches='tight', pad_inches=0)
+        # plt.savefig('{}.eps'.format(filename), bbox_inches='tight', pad_inches=0)
+        plt.savefig('{}.png'.format(filename), bbox_inches='tight', pad_inches=0)
     else:
 #        plt.savefig('{}.pgf'.format(filename))
-        plt.savefig('{}.pdf'.format(filename))
-        plt.savefig('{}.eps'.format(filename))
+        # plt.savefig('{}.pdf'.format(filename))
+        # plt.savefig('{}.eps'.format(filename))
+        plt.savefig('{}.png'.format(filename))
+
 
 ## Simple plot
 #fig, ax  = newfig(1.0)
@@ -66,7 +69,7 @@ def savefig(filename, crop = True):
 #    for t in range(1, len(y)):
 #        s.append(a * y[t] + (1-a) * s[t-1])
 #    return np.array(s)
-#    
+#
 #y = [0]*200
 #y.extend([20]*(1000-len(y)))
 #s = ema(y, 0.01)
