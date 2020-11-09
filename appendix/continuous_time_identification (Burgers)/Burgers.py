@@ -293,12 +293,12 @@ if __name__ == "__main__":
 
     ax = plt.subplot(gs2[:, :])
     ax.axis('off')
-    s1 = r'$\begin{tabular}{ |c|c| }  \hline Correct PDE & $u_t + u u_x - 0.0031831 u_{xx} = 0$ \\  \hline Identified PDE (clean data) & '
+    s1 = r'\begin{tabular}{ |c|c| }  \hline Correct PDE & $u_t + u u_x - 0.0031831 u_{xx} = 0$ \\  \hline Identified PDE (clean data) & '
     s2 = r'$u_t + %.5f u u_x - %.7f u_{xx} = 0$ \\  \hline ' % (lambda_1_value, lambda_2_value)
     s3 = r'Identified PDE (1\% noise) & '
     s4 = r'$u_t + %.5f u u_x - %.7f u_{xx} = 0$  \\  \hline ' % (lambda_1_value_noisy, lambda_2_value_noisy)
-    s5 = r'\end{tabular}$'
+    s5 = r'\end{tabular}'
     s = s1+s2+s3+s4+s5
     ax.text(0.1,0.1,s)
 
-    plt.savefig('./figures/Burgers_identification.png')  
+    plt.savefig('./figures/Burgers_identification.png')
